@@ -1,0 +1,1042 @@
+2022-07-10 13:33:04.484  INFO 1868 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 1868 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 13:33:04.501  INFO 1868 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 13:33:04.659  INFO 1868 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-10 13:33:06.057  WARN 1868 --- [restartedMain] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'createMessageConverter' defined in com.chufan.nove.NoveApplication: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.amqp.support.converter.MessageConverter]: Factory method 'createMessageConverter' threw exception; nested exception is java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/ObjectMapper
+2022-07-10 13:33:06.087  INFO 1868 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-07-10 13:33:06.168 ERROR 1868 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'createMessageConverter' defined in com.chufan.nove.NoveApplication: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.amqp.support.converter.MessageConverter]: Factory method 'createMessageConverter' threw exception; nested exception is java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/ObjectMapper
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.chufan.nove.NoveApplication.main(NoveApplication.java:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.amqp.support.converter.MessageConverter]: Factory method 'createMessageConverter' threw exception; nested exception is java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/ObjectMapper
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 23 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/ObjectMapper
+	at org.springframework.amqp.support.converter.Jackson2JsonMessageConverter.<init>(Jackson2JsonMessageConverter.java:58)
+	at org.springframework.amqp.support.converter.Jackson2JsonMessageConverter.<init>(Jackson2JsonMessageConverter.java:46)
+	at com.chufan.nove.NoveApplication.createMessageConverter(NoveApplication.java:24)
+	at com.chufan.nove.NoveApplication$$EnhancerBySpringCGLIB$$c52de398.CGLIB$createMessageConverter$0(<generated>)
+	at com.chufan.nove.NoveApplication$$EnhancerBySpringCGLIB$$c52de398$$FastClassBySpringCGLIB$$27631d8a.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.chufan.nove.NoveApplication$$EnhancerBySpringCGLIB$$c52de398.createMessageConverter(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 24 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.databind.ObjectMapper
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 37 common frames omitted
+
+2022-07-10 13:39:37.799  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 6936 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 13:39:37.803  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 13:39:37.976  INFO 6936 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-10 13:39:37.977  INFO 6936 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-10 13:39:41.155  INFO 6936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 13:39:41.183  INFO 6936 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 13:39:41.184  INFO 6936 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 13:39:41.361  INFO 6936 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 13:39:41.363  INFO 6936 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3383 ms
+2022-07-10 13:39:43.985  INFO 6936 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 13:39:44.114  INFO 6936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 13:39:44.155  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 7.51 seconds (JVM running for 8.558)
+2022-07-10 13:40:17.584  INFO 6936 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-10 13:40:17.585  INFO 6936 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-10 13:40:17.589  INFO 6936 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-07-10 16:39:30.751  INFO 6936 --- [restartedMain] SU                                       : Get Version in GET
+2022-07-10 16:39:30.948  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 6936 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 16:39:30.949  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 16:39:32.103  INFO 6936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 16:39:32.144  INFO 6936 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 16:39:32.160  INFO 6936 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 16:39:32.199  INFO 6936 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 16:39:32.200  INFO 6936 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1200 ms
+2022-07-10 16:39:32.961  INFO 6936 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 16:39:32.994  INFO 6936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 16:39:33.012  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 2.248 seconds (JVM running for 10797.415)
+2022-07-10 16:39:33.022  INFO 6936 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-07-10 16:41:23.974  INFO 6936 --- [restartedMain] SU                                       : Get Version in GET
+2022-07-10 16:41:24.311  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 6936 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 16:41:24.314  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 16:41:25.091  INFO 6936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 16:41:25.095  INFO 6936 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 16:41:25.097  INFO 6936 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 16:41:25.108  INFO 6936 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 16:41:25.110  INFO 6936 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 771 ms
+2022-07-10 16:41:25.602  INFO 6936 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 16:41:25.628  INFO 6936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 16:41:25.639  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 1.657 seconds (JVM running for 10910.042)
+2022-07-10 16:41:25.643  INFO 6936 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-07-10 16:42:37.967  INFO 6936 --- [restartedMain] SU                                       : Get Version in GET
+2022-07-10 16:42:38.340  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 6936 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 16:42:38.342  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 16:42:39.028  INFO 6936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 16:42:39.030  INFO 6936 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 16:42:39.031  INFO 6936 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 16:42:39.042  INFO 6936 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 16:42:39.051  INFO 6936 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 627 ms
+2022-07-10 16:42:39.564  INFO 6936 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 16:42:39.580  INFO 6936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 16:42:39.607  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 1.631 seconds (JVM running for 10984.009)
+2022-07-10 16:42:39.615  INFO 6936 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-07-10 16:44:49.947  INFO 6936 --- [restartedMain] SU                                       : Get Version in GET
+2022-07-10 16:44:50.123  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 6936 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 16:44:50.169  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 16:44:51.291  INFO 6936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 16:44:51.312  INFO 6936 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 16:44:51.321  INFO 6936 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 16:44:51.335  INFO 6936 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 16:44:51.341  INFO 6936 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1125 ms
+2022-07-10 16:44:51.702  INFO 6936 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 16:44:51.777  INFO 6936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 16:44:51.907  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 1.953 seconds (JVM running for 11116.31)
+2022-07-10 16:44:51.944  INFO 6936 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-07-10 16:58:29.619  INFO 6936 --- [restartedMain] SU                                       : Get Version in GET
+2022-07-10 16:58:29.778  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 6936 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 16:58:29.805  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 16:58:30.546  INFO 6936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 16:58:30.549  INFO 6936 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 16:58:30.550  INFO 6936 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 16:58:30.562  INFO 6936 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 16:58:30.563  INFO 6936 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 723 ms
+2022-07-10 16:58:31.098  INFO 6936 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 16:58:31.127  INFO 6936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 16:58:31.150  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 1.519 seconds (JVM running for 11935.553)
+2022-07-10 16:58:31.159  INFO 6936 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-07-10 16:58:34.062  INFO 6936 --- [restartedMain] SU                                       : Get Version in GET
+2022-07-10 16:58:34.191  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 6936 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 16:58:34.193  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 16:58:34.640  INFO 6936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 16:58:34.644  INFO 6936 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 16:58:34.646  INFO 6936 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 16:58:34.657  INFO 6936 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 16:58:34.661  INFO 6936 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 431 ms
+2022-07-10 16:58:34.947  INFO 6936 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 16:58:34.959  INFO 6936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 16:58:34.974  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 0.906 seconds (JVM running for 11939.377)
+2022-07-10 16:58:34.999  INFO 6936 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-07-10 17:07:47.766  INFO 6936 --- [restartedMain] SU                                       : Get Version in GET
+2022-07-10 17:07:47.875  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 6936 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 17:07:47.877  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 17:07:48.510  INFO 6936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 17:07:48.516  INFO 6936 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 17:07:48.518  INFO 6936 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 17:07:48.543  INFO 6936 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 17:07:48.546  INFO 6936 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 666 ms
+2022-07-10 17:07:48.974  INFO 6936 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 17:07:48.991  INFO 6936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 17:07:49.005  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 1.232 seconds (JVM running for 12493.408)
+2022-07-10 17:07:49.011  INFO 6936 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-07-10 17:08:02.315  INFO 6936 --- [restartedMain] SU                                       : Get Version in GET
+2022-07-10 17:08:02.412  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 6936 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 17:08:02.414  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 17:08:02.764  INFO 6936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 17:08:02.767  INFO 6936 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 17:08:02.769  INFO 6936 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 17:08:02.795  INFO 6936 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 17:08:02.797  INFO 6936 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 379 ms
+2022-07-10 17:08:03.042  INFO 6936 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 17:08:03.067  INFO 6936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 17:08:03.075  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 0.75 seconds (JVM running for 12507.478)
+2022-07-10 17:08:03.078  INFO 6936 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-07-10 17:08:15.262  INFO 6936 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-10 17:08:15.267  INFO 6936 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-10 17:08:15.271  INFO 6936 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-07-10 17:08:15.347  INFO 6936 --- [http-nio-8080-exec-1] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.100.201:5672]
+2022-07-10 17:08:16.459  INFO 6936 --- [http-nio-8080-exec-1] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#190dee96:0/SimpleConnection@26f27b36 [delegate=amqp://guest@192.168.100.201:5672/, localPort= 65394]
+2022-07-10 17:08:16.530 ERROR 6936 --- [AMQP Connection 192.168.100.201:5672] o.s.a.r.c.CachingConnectionFactory       : Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no exchange 'Registration' in vhost '/', class-id=60, method-id=40)
+2022-07-10 17:08:37.966 ERROR 6936 --- [AMQP Connection 192.168.100.201:5672] o.s.a.r.c.CachingConnectionFactory       : Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no exchange 'Registration' in vhost '/', class-id=60, method-id=40)
+2022-07-10 17:14:05.210  INFO 6936 --- [restartedMain] SU                                       : Get Version in GET
+2022-07-10 17:14:05.287  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 6936 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 17:14:05.289  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 17:14:05.976  INFO 6936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 17:14:05.977  INFO 6936 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 17:14:05.978  INFO 6936 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 17:14:05.990  INFO 6936 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 17:14:05.991  INFO 6936 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 697 ms
+2022-07-10 17:14:06.396  INFO 6936 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 17:14:06.410  INFO 6936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 17:14:06.415  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 1.199 seconds (JVM running for 12870.818)
+2022-07-10 17:14:06.425  INFO 6936 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-07-10 17:14:12.859  INFO 6936 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-10 17:14:12.861  INFO 6936 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-10 17:14:12.862  INFO 6936 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-07-10 17:14:12.866  INFO 6936 --- [http-nio-8080-exec-1] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.100.201:5672]
+2022-07-10 17:14:12.876  INFO 6936 --- [http-nio-8080-exec-1] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#71f8a9d5:0/SimpleConnection@1cb2a9c9 [delegate=amqp://guest@192.168.100.201:5672/, localPort= 49367]
+2022-07-10 17:14:24.864 ERROR 6936 --- [AMQP Connection 192.168.100.201:5672] o.s.a.r.c.CachingConnectionFactory       : Shutdown Signal: channel error; protocol method: #method<channel.close>(reply-code=404, reply-text=NOT_FOUND - no exchange 'Registration' in vhost '/', class-id=60, method-id=40)
+2022-07-10 17:16:25.939  INFO 6936 --- [restartedMain] SU                                       : Get Version in GET
+2022-07-10 17:16:26.049  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 6936 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 17:16:26.050  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 17:16:26.599  INFO 6936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 17:16:26.603  INFO 6936 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 17:16:26.605  INFO 6936 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 17:16:26.618  INFO 6936 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 17:16:26.621  INFO 6936 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 565 ms
+2022-07-10 17:16:26.834  INFO 6936 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 17:16:26.865  INFO 6936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 17:16:26.878  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 0.931 seconds (JVM running for 13011.281)
+2022-07-10 17:16:26.889  INFO 6936 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-07-10 17:16:33.775  INFO 6936 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-10 17:16:33.776  INFO 6936 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-10 17:16:33.777  INFO 6936 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-07-10 17:16:33.781  INFO 6936 --- [http-nio-8080-exec-2] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.100.201:5672]
+2022-07-10 17:16:33.790  INFO 6936 --- [http-nio-8080-exec-2] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#6a926360:0/SimpleConnection@67860853 [delegate=amqp://guest@192.168.100.201:5672/, localPort= 49510]
+2022-07-10 17:23:38.885  INFO 6936 --- [restartedMain] SU                                       : Get Version in GET
+2022-07-10 17:23:38.996  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 6936 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 17:23:38.998  INFO 6936 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 17:23:39.460  INFO 6936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 17:23:39.462  INFO 6936 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 17:23:39.463  INFO 6936 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 17:23:39.469  INFO 6936 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 17:23:39.470  INFO 6936 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 466 ms
+2022-07-10 17:23:39.486  WARN 6936 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userController' defined in file [D:\dev\spbootProj\nove\target\classes\com\chufan\nove\controller\UserController.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.chufan.nove.controller.UserController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	The declared package "com.chufan.nove.web" does not match the expected package "com.chufan.nove.controller"
+
+2022-07-10 17:23:39.487  INFO 6936 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-07-10 17:23:39.503  INFO 6936 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-07-10 17:23:39.553 ERROR 6936 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userController' defined in file [D:\dev\spbootProj\nove\target\classes\com\chufan\nove\controller\UserController.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.chufan.nove.controller.UserController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	The declared package "com.chufan.nove.web" does not match the expected package "com.chufan.nove.controller"
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.chufan.nove.NoveApplication.main(NoveApplication.java:23)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.chufan.nove.controller.UserController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	The declared package "com.chufan.nove.web" does not match the expected package "com.chufan.nove.controller"
+
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:224)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1326)
+	... 22 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problem: 
+	The declared package "com.chufan.nove.web" does not match the expected package "com.chufan.nove.controller"
+
+	at com.chufan.nove.controller.UserController.<init>(UserController.java:1)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:211)
+	... 24 common frames omitted
+
+2022-07-10 17:26:04.061  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 2528 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 17:26:04.065  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 17:26:04.235  INFO 2528 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-10 17:26:04.237  INFO 2528 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-10 17:26:06.776  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 17:26:06.811  INFO 2528 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 17:26:06.816  INFO 2528 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 17:26:06.993  INFO 2528 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 17:26:06.997  INFO 2528 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2756 ms
+2022-07-10 17:26:09.116  INFO 2528 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 17:26:09.184  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 17:26:09.216  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 6.299 seconds (JVM running for 7.368)
+2022-07-10 17:26:15.113  INFO 2528 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-10 17:26:15.116  INFO 2528 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-10 17:26:15.119  INFO 2528 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-07-10 17:26:15.320  INFO 2528 --- [http-nio-8080-exec-2] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.100.201:5672]
+2022-07-10 17:26:15.455  INFO 2528 --- [http-nio-8080-exec-2] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#9dc0815:0/SimpleConnection@6937d388 [delegate=amqp://guest@192.168.100.201:5672/, localPort= 50334]
+2022-07-10 17:27:14.573  INFO 2528 --- [restartedMain] SU                                       : Get Version in GET
+2022-07-10 17:27:14.751  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 2528 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 17:27:14.765  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 17:27:16.170  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 17:27:16.187  INFO 2528 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 17:27:16.189  INFO 2528 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 17:27:16.206  INFO 2528 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 17:27:16.207  INFO 2528 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1419 ms
+2022-07-10 17:27:16.924  INFO 2528 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 17:27:16.956  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 17:27:16.975  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 2.384 seconds (JVM running for 75.127)
+2022-07-10 17:27:16.994  INFO 2528 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-07-10 17:27:20.218  INFO 2528 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-10 17:27:20.220  INFO 2528 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-10 17:27:20.223  INFO 2528 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-07-10 17:27:20.234  INFO 2528 --- [http-nio-8080-exec-1] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.100.201:5672]
+2022-07-10 17:27:20.247  INFO 2528 --- [http-nio-8080-exec-1] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#5815fbbc:0/SimpleConnection@5f5ae62e [delegate=amqp://guest@192.168.100.201:5672/, localPort= 50417]
+2022-07-10 17:27:36.206  INFO 2528 --- [restartedMain] SU                                       : Get Version in GET
+2022-07-10 17:27:36.353  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 2528 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 17:27:36.360  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 17:27:36.984  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 17:27:36.984  INFO 2528 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 17:27:37.002  INFO 2528 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 17:27:37.024  INFO 2528 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 17:27:37.027  INFO 2528 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 659 ms
+2022-07-10 17:27:37.584  INFO 2528 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 17:27:37.619  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 17:27:37.630  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 1.415 seconds (JVM running for 95.782)
+2022-07-10 17:27:37.653  INFO 2528 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-07-10 17:27:44.670  INFO 2528 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-10 17:27:44.672  INFO 2528 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-10 17:27:44.673  INFO 2528 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-07-10 17:27:44.676  INFO 2528 --- [http-nio-8080-exec-1] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.100.201:5672]
+2022-07-10 17:27:44.687  INFO 2528 --- [http-nio-8080-exec-1] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#58d50112:0/SimpleConnection@62a68fe4 [delegate=amqp://guest@192.168.100.201:5672/, localPort= 50453]
+2022-07-10 17:28:49.003  INFO 2528 --- [restartedMain] SU                                       : Get Version in GET
+2022-07-10 17:28:49.239  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 2528 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 17:28:49.241  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 17:28:49.837  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 17:28:49.840  INFO 2528 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 17:28:49.841  INFO 2528 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 17:28:49.849  INFO 2528 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 17:28:49.852  INFO 2528 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 596 ms
+2022-07-10 17:28:50.150  INFO 2528 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 17:28:50.177  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 17:28:50.192  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 1.178 seconds (JVM running for 168.344)
+2022-07-10 17:28:50.197  INFO 2528 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-07-10 17:28:54.920  INFO 2528 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-10 17:28:54.923  INFO 2528 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-10 17:28:54.925  INFO 2528 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-07-10 17:28:54.927  INFO 2528 --- [http-nio-8080-exec-3] c.chufan.nove.controller.UserController  : in loging----
+2022-07-10 17:28:54.929  INFO 2528 --- [http-nio-8080-exec-3] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.100.201:5672]
+2022-07-10 17:28:54.946  INFO 2528 --- [http-nio-8080-exec-3] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#45b9a6c4:0/SimpleConnection@5940931b [delegate=amqp://guest@192.168.100.201:5672/, localPort= 50527]
+2022-07-10 17:30:40.404  INFO 2528 --- [restartedMain] SU                                       : Get Version in GET
+2022-07-10 17:30:40.683  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 2528 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 17:30:40.707  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 17:30:41.586  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 17:30:41.588  INFO 2528 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 17:30:41.592  INFO 2528 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 17:30:41.651  INFO 2528 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 17:30:41.652  INFO 2528 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 934 ms
+2022-07-10 17:30:41.931  INFO 2528 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 17:30:41.951  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 17:30:41.966  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 1.549 seconds (JVM running for 280.118)
+2022-07-10 17:30:41.973  INFO 2528 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-07-10 17:30:47.312  INFO 2528 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-10 17:30:47.314  INFO 2528 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-10 17:30:47.316  INFO 2528 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-07-10 17:30:47.318  INFO 2528 --- [http-nio-8080-exec-1] c.chufan.nove.controller.UserController  : in loging----
+2022-07-10 17:30:47.320  INFO 2528 --- [http-nio-8080-exec-1] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.100.201:5672]
+2022-07-10 17:30:47.336  INFO 2528 --- [http-nio-8080-exec-1] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#35c14b7d:0/SimpleConnection@788ccfdd [delegate=amqp://guest@192.168.100.201:5672/, localPort= 50640]
+2022-07-10 17:30:53.280  INFO 2528 --- [http-nio-8080-exec-2] c.chufan.nove.controller.UserController  : in loging----
+2022-07-10 17:30:54.743  INFO 2528 --- [http-nio-8080-exec-10] c.chufan.nove.controller.UserController  : in loging----
+2022-07-10 17:30:55.391  INFO 2528 --- [http-nio-8080-exec-9] c.chufan.nove.controller.UserController  : in loging----
+2022-07-10 17:30:59.520  INFO 2528 --- [http-nio-8080-exec-8] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 17:31:02.311  INFO 2528 --- [http-nio-8080-exec-4] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 17:31:05.708  INFO 2528 --- [http-nio-8080-exec-7] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 17:35:02.918  INFO 2528 --- [restartedMain] SU                                       : Get Version in GET
+2022-07-10 17:35:03.104  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 2528 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 17:35:03.111  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 17:35:03.876  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 17:35:03.879  INFO 2528 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 17:35:03.880  INFO 2528 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 17:35:03.894  INFO 2528 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 17:35:03.896  INFO 2528 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 779 ms
+2022-07-10 17:35:04.478  INFO 2528 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 17:35:04.610  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 17:35:04.638  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 1.703 seconds (JVM running for 542.791)
+2022-07-10 17:35:04.650  INFO 2528 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-07-10 17:35:08.064  INFO 2528 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-10 17:35:08.066  INFO 2528 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-10 17:35:08.068  INFO 2528 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-07-10 17:35:08.075  INFO 2528 --- [http-nio-8080-exec-3] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 17:35:10.406  INFO 2528 --- [http-nio-8080-exec-4] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 17:35:37.133  INFO 2528 --- [restartedMain] SU                                       : Get Version in GET
+2022-07-10 17:35:37.235  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 2528 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 17:35:37.236  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 17:35:37.773  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 17:35:37.782  INFO 2528 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 17:35:37.785  INFO 2528 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 17:35:37.811  INFO 2528 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 17:35:37.813  INFO 2528 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 574 ms
+2022-07-10 17:35:38.246  INFO 2528 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 17:35:38.256  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 17:35:38.276  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 1.133 seconds (JVM running for 576.428)
+2022-07-10 17:35:38.288  INFO 2528 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-07-10 17:38:45.712  INFO 2528 --- [restartedMain] SU                                       : Get Version in GET
+2022-07-10 17:38:45.830  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 2528 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 17:38:45.832  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 17:38:46.389  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 17:38:46.392  INFO 2528 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 17:38:46.396  INFO 2528 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 17:38:46.435  INFO 2528 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 17:38:46.438  INFO 2528 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 601 ms
+2022-07-10 17:38:46.776  INFO 2528 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 17:38:46.787  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 17:38:46.803  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 1.071 seconds (JVM running for 764.956)
+2022-07-10 17:38:46.807  INFO 2528 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-07-10 17:38:53.520  INFO 2528 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-10 17:38:53.522  INFO 2528 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-10 17:38:53.523  INFO 2528 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-07-10 17:38:53.526  INFO 2528 --- [http-nio-8080-exec-2] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 17:38:53.528  INFO 2528 --- [http-nio-8080-exec-2] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.100.201:5672]
+2022-07-10 17:38:53.537  INFO 2528 --- [http-nio-8080-exec-2] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#4b6774c4:0/SimpleConnection@753a4b47 [delegate=amqp://guest@192.168.100.201:5672/, localPort= 51226]
+2022-07-10 17:38:57.010  INFO 2528 --- [http-nio-8080-exec-3] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 17:38:58.571  INFO 2528 --- [http-nio-8080-exec-1] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 17:38:59.193  INFO 2528 --- [http-nio-8080-exec-5] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 17:39:00.770  INFO 2528 --- [http-nio-8080-exec-6] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 17:39:03.840  INFO 2528 --- [http-nio-8080-exec-7] c.chufan.nove.controller.UserController  : in loging----
+2022-07-10 17:39:04.833  INFO 2528 --- [http-nio-8080-exec-8] c.chufan.nove.controller.UserController  : in loging----
+2022-07-10 17:39:05.260  INFO 2528 --- [http-nio-8080-exec-4] c.chufan.nove.controller.UserController  : in loging----
+2022-07-10 17:39:05.496  INFO 2528 --- [http-nio-8080-exec-10] c.chufan.nove.controller.UserController  : in loging----
+2022-07-10 17:39:05.703  INFO 2528 --- [http-nio-8080-exec-9] c.chufan.nove.controller.UserController  : in loging----
+2022-07-10 17:40:29.684  INFO 2528 --- [restartedMain] SU                                       : Get Version in GET
+2022-07-10 17:40:29.818  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 2528 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 17:40:29.820  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 17:40:30.580  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 17:40:30.586  INFO 2528 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 17:40:30.587  INFO 2528 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 17:40:30.620  INFO 2528 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 17:40:30.622  INFO 2528 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 798 ms
+2022-07-10 17:40:30.857  INFO 2528 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 17:40:30.954  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 17:40:30.956  INFO 2528 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.100.201:5672]
+2022-07-10 17:40:31.044  INFO 2528 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#1982427c:0/SimpleConnection@65c02069 [delegate=amqp://guest@192.168.100.201:5672/, localPort= 51347]
+2022-07-10 17:40:31.153  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 1.459 seconds (JVM running for 869.305)
+2022-07-10 17:40:31.157  INFO 2528 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-07-10 17:40:31.200  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.nove.service.QueueMessageListener    :  q_mail received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657444593780]
+2022-07-10 17:40:31.200  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657444127884]
+2022-07-10 17:40:31.205  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657444133651]
+2022-07-10 17:40:31.205  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.nove.service.QueueMessageListener    :  q_mail received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657444598721]
+2022-07-10 17:40:31.207  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657444136417]
+2022-07-10 17:40:31.212  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657444430931]
+2022-07-10 17:40:31.212  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.nove.service.QueueMessageListener    :  q_mail received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657444600971]
+2022-07-10 17:40:31.214  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657444431939]
+2022-07-10 17:40:31.216  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657444432386]
+2022-07-10 17:40:31.216  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.nove.service.QueueMessageListener    :  q_mail received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657444602537]
+2022-07-10 17:40:31.217  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.nove.service.QueueMessageListener    :  q_mail received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657444603001]
+2022-07-10 17:40:31.217  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657444432753]
+2022-07-10 17:40:31.219  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657444452865]
+2022-07-10 17:40:31.219  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.nove.service.QueueMessageListener    :  q_mail received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657444604691]
+2022-07-10 17:40:31.220  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657444458265]
+2022-07-10 17:40:31.220  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.nove.service.QueueMessageListener    :  q_mail received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657445264675]
+2022-07-10 17:40:31.222  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657444460098]
+2022-07-10 17:40:31.222  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.nove.service.QueueMessageListener    :  q_mail received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657445334928]
+2022-07-10 17:40:31.223  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657444460804]
+2022-07-10 17:40:31.223  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.nove.service.QueueMessageListener    :  q_mail received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657445447319]
+2022-07-10 17:40:31.224  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657444593780]
+2022-07-10 17:40:31.225  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.nove.service.QueueMessageListener    :  q_mail received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657445453281]
+2022-07-10 17:40:31.225  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657444598721]
+2022-07-10 17:40:31.226  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.nove.service.QueueMessageListener    :  q_mail received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657445454744]
+2022-07-10 17:40:31.227  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657444600971]
+2022-07-10 17:40:31.229  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657444602537]
+2022-07-10 17:40:31.229  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.nove.service.QueueMessageListener    :  q_mail received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657445455392]
+2022-07-10 17:40:31.230  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.nove.service.QueueMessageListener    :  q_mail received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657445943842]
+2022-07-10 17:40:31.231  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657444603001]
+2022-07-10 17:40:31.234  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.nove.service.QueueMessageListener    :  q_mail received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657445944833]
+2022-07-10 17:40:31.236  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657444604691]
+2022-07-10 17:40:31.237  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657444612737]
+2022-07-10 17:40:31.237  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.nove.service.QueueMessageListener    :  q_mail received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657445945261]
+2022-07-10 17:40:31.238  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657445175217]
+2022-07-10 17:40:31.240  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657445183436]
+2022-07-10 17:40:31.241  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657445184333]
+2022-07-10 17:40:31.240  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.nove.service.QueueMessageListener    :  q_mail received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657445945497]
+2022-07-10 17:40:31.242  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657445184898]
+2022-07-10 17:40:31.244  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657445185323]
+2022-07-10 17:40:31.244  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.nove.service.QueueMessageListener    :  q_mail received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657445945704]
+2022-07-10 17:40:31.245  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657445185641]
+2022-07-10 17:40:31.246  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657445240233]
+2022-07-10 17:40:31.247  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657445243179]
+2022-07-10 17:40:31.248  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657445245410]
+2022-07-10 17:40:31.251  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657445264675]
+2022-07-10 17:40:31.258  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657445334928]
+2022-07-10 17:40:31.260  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657445447319]
+2022-07-10 17:40:31.261  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657445453281]
+2022-07-10 17:40:31.263  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657445454744]
+2022-07-10 17:40:31.264  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657445455392]
+2022-07-10 17:40:31.266  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657445459522]
+2022-07-10 17:40:31.269  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657445462313]
+2022-07-10 17:40:31.270  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657445465709]
+2022-07-10 17:40:31.271  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657445933526]
+2022-07-10 17:40:31.272  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657445937010]
+2022-07-10 17:40:31.273  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657445938572]
+2022-07-10 17:40:31.276  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657445939194]
+2022-07-10 17:40:31.278  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657445940771]
+2022-07-10 17:40:31.279  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657445943842]
+2022-07-10 17:40:31.280  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657445944833]
+2022-07-10 17:40:31.281  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657445945261]
+2022-07-10 17:40:31.282  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657445945497]
+2022-07-10 17:40:31.284  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657445945704]
+2022-07-10 17:40:49.727  INFO 2528 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-10 17:40:49.727  INFO 2528 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-10 17:40:49.729  INFO 2528 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-07-10 17:40:49.735  INFO 2528 --- [http-nio-8080-exec-3] c.chufan.nove.controller.UserController  : in loging----
+2022-07-10 17:40:49.754  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.nove.service.QueueMessageListener    :  q_mail received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657446049745]
+2022-07-10 17:40:49.755  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657446049745]
+2022-07-10 17:40:59.490  INFO 2528 --- [http-nio-8080-exec-2] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 17:40:59.499  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] c.c.nove.service.QueueMessageListener    : queue q_sms received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657446059492]
+2022-07-10 17:42:03.077  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 17:42:03.080  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 17:42:03.081  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 17:42:03.083  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 17:42:03.084  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 17:42:03.228  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 17:42:03.228  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 17:42:03.738  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 17:42:03.739  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 17:42:03.802  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 17:42:04.243  INFO 2528 --- [Thread-36] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 17:42:04.244  INFO 2528 --- [Thread-36] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 17:42:04.244  INFO 2528 --- [Thread-36] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 17:42:04.245  INFO 2528 --- [Thread-36] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 17:42:04.245  INFO 2528 --- [Thread-36] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 17:42:04.420  INFO 2528 --- [restartedMain] SU                                       : Get Version in GET
+2022-07-10 17:42:04.516  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 2528 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 17:42:04.522  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 17:42:05.031  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 17:42:05.043  INFO 2528 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 17:42:05.045  INFO 2528 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 17:42:05.077  INFO 2528 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 17:42:05.086  INFO 2528 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 558 ms
+2022-07-10 17:42:05.386  INFO 2528 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 17:42:05.404  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 17:42:05.422  INFO 2528 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.100.201:5672]
+2022-07-10 17:42:05.443  INFO 2528 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#15d8fdcb:0/SimpleConnection@484f6cbe [delegate=amqp://guest@192.168.100.201:5672/, localPort= 51443]
+2022-07-10 17:42:05.493  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 1.066 seconds (JVM running for 963.645)
+2022-07-10 17:42:05.497  INFO 2528 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-07-10 17:42:09.126  INFO 2528 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-10 17:42:09.128  INFO 2528 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-10 17:42:09.129  INFO 2528 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-07-10 17:42:09.131  INFO 2528 --- [http-nio-8080-exec-3] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 17:42:09.146  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657446129132]
+2022-07-10 17:42:13.070  INFO 2528 --- [http-nio-8080-exec-2] c.chufan.nove.controller.UserController  : in loging----
+2022-07-10 17:42:13.081  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.nove.service.QueueMessageListener    : queue q_mail received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657446133072]
+2022-07-10 17:42:13.083  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] c.c.nove.service.QueueMessageListener    : queue q_sms received message: [LoginMessage: email=m@find73.com, name=Tony, success=false, timestamp=1657446133072]
+2022-07-10 17:42:33.199  INFO 2528 --- [http-nio-8080-exec-4] c.chufan.nove.controller.UserController  : in loging----
+2022-07-10 17:42:33.204  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657446153200]
+2022-07-10 17:42:33.203  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-1] c.c.nove.service.QueueMessageListener    : queue q_mail received message: [LoginMessage: email=m@find73.com, name=Tony, success=false, timestamp=1657446153200]
+2022-07-10 17:53:37.990  INFO 2528 --- [http-nio-8080-exec-7] c.chufan.nove.controller.UserController  : in loging----
+2022-07-10 17:53:37.994  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] c.c.nove.service.QueueMessageListener    : queue q_sms received message: [LoginMessage: email=m@find73.com, name=Tony, success=false, timestamp=1657446817991]
+2022-07-10 17:53:37.994  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.nove.service.QueueMessageListener    : queue q_mail received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657446817991]
+2022-07-10 17:53:47.572  INFO 2528 --- [http-nio-8080-exec-8] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 17:53:47.580  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657446827576]
+2022-07-10 18:00:10.874  INFO 2528 --- [http-nio-8080-exec-9] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:10.878  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447210875]
+2022-07-10 18:00:13.738  INFO 2528 --- [http-nio-8080-exec-3] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:13.741  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447213739]
+2022-07-10 18:00:14.885  INFO 2528 --- [http-nio-8080-exec-2] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:14.889  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447214886]
+2022-07-10 18:00:15.964  INFO 2528 --- [http-nio-8080-exec-4] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:15.967  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447215966]
+2022-07-10 18:00:22.564  INFO 2528 --- [http-nio-8080-exec-5] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:22.568  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447222566]
+2022-07-10 18:00:23.955  INFO 2528 --- [http-nio-8080-exec-1] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:23.959  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447223956]
+2022-07-10 18:00:24.609  INFO 2528 --- [http-nio-8080-exec-7] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:24.612  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447224609]
+2022-07-10 18:00:25.154  INFO 2528 --- [http-nio-8080-exec-8] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:25.156  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447225154]
+2022-07-10 18:00:26.732  INFO 2528 --- [http-nio-8080-exec-6] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:26.736  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447226733]
+2022-07-10 18:00:27.106  INFO 2528 --- [http-nio-8080-exec-10] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:27.109  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447227107]
+2022-07-10 18:00:27.563  INFO 2528 --- [http-nio-8080-exec-9] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:27.567  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447227564]
+2022-07-10 18:00:27.986  INFO 2528 --- [http-nio-8080-exec-3] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:27.990  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447227988]
+2022-07-10 18:00:28.603  INFO 2528 --- [http-nio-8080-exec-2] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:28.606  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447228604]
+2022-07-10 18:00:29.334  INFO 2528 --- [http-nio-8080-exec-4] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:29.337  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447229335]
+2022-07-10 18:00:29.970  INFO 2528 --- [http-nio-8080-exec-5] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:29.973  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447229971]
+2022-07-10 18:00:30.850  INFO 2528 --- [http-nio-8080-exec-1] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:30.852  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447230851]
+2022-07-10 18:00:31.962  INFO 2528 --- [http-nio-8080-exec-7] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:31.964  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447231962]
+2022-07-10 18:00:32.666  INFO 2528 --- [http-nio-8080-exec-8] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:32.672  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447232667]
+2022-07-10 18:00:42.751  INFO 2528 --- [http-nio-8080-exec-6] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:42.755  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447242753]
+2022-07-10 18:00:43.885  INFO 2528 --- [http-nio-8080-exec-10] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:43.888  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447243886]
+2022-07-10 18:00:44.497  INFO 2528 --- [http-nio-8080-exec-9] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:44.500  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447244498]
+2022-07-10 18:00:45.097  INFO 2528 --- [http-nio-8080-exec-3] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:45.099  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447245098]
+2022-07-10 18:00:45.684  INFO 2528 --- [http-nio-8080-exec-2] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:45.686  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447245685]
+2022-07-10 18:00:46.337  INFO 2528 --- [http-nio-8080-exec-4] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:46.339  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447246338]
+2022-07-10 18:00:46.912  INFO 2528 --- [http-nio-8080-exec-5] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:46.914  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447246913]
+2022-07-10 18:00:47.440  INFO 2528 --- [http-nio-8080-exec-1] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:47.442  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447247441]
+2022-07-10 18:00:47.994  INFO 2528 --- [http-nio-8080-exec-7] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:47.998  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447247995]
+2022-07-10 18:00:48.564  INFO 2528 --- [http-nio-8080-exec-8] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:48.568  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447248565]
+2022-07-10 18:00:49.308  INFO 2528 --- [http-nio-8080-exec-6] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:49.315  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447249309]
+2022-07-10 18:00:59.712  INFO 2528 --- [http-nio-8080-exec-10] c.chufan.nove.controller.UserController  : in fail----
+2022-07-10 18:00:59.720  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447259713]
+2022-07-10 18:02:54.616  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:02:54.618  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:02:54.619  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:02:54.621  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:02:54.623  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:02:54.644  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:02:55.119  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:02:55.120  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:02:55.120  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:02:55.119  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:02:55.490  INFO 2528 --- [Thread-40] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:02:55.491  INFO 2528 --- [Thread-40] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:02:55.492  INFO 2528 --- [Thread-40] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:02:55.492  INFO 2528 --- [Thread-40] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:02:55.492  INFO 2528 --- [Thread-40] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:02:55.710  INFO 2528 --- [restartedMain] SU                                       : Get Version in GET
+2022-07-10 18:02:55.816  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 2528 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 18:02:55.818  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 18:02:56.352  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 18:02:56.357  INFO 2528 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 18:02:56.400  INFO 2528 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 18:02:56.415  INFO 2528 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 18:02:56.446  INFO 2528 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 625 ms
+2022-07-10 18:02:56.740  INFO 2528 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 18:02:56.778  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 18:02:56.866  INFO 2528 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.100.201:5672]
+2022-07-10 18:02:56.937  INFO 2528 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#3d06992f:0/SimpleConnection@300a78d0 [delegate=amqp://guest@192.168.100.201:5672/, localPort= 52669]
+2022-07-10 18:02:56.985  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 1.268 seconds (JVM running for 2215.137)
+2022-07-10 18:02:56.988  INFO 2528 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-07-10 18:02:58.640  INFO 2528 --- [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-10 18:02:58.642  INFO 2528 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-10 18:02:58.644  INFO 2528 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-07-10 18:02:58.646  INFO 2528 --- [http-nio-8080-exec-4] c.chufan.nove.controller.UserController  : in fail----null
+2022-07-10 18:02:58.670  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447378647]
+2022-07-10 18:03:04.180  INFO 2528 --- [http-nio-8080-exec-2] c.chufan.nove.controller.UserController  : in fail----null
+2022-07-10 18:03:04.187  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657447384181]
+2022-07-10 18:03:36.028  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:03:36.029  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:03:36.031  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:03:36.034  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:03:36.035  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:03:36.248  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:03:36.249  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:03:36.250  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:03:36.290  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:03:36.441  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:03:37.041  INFO 2528 --- [Thread-44] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:03:37.043  INFO 2528 --- [Thread-44] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:03:37.044  INFO 2528 --- [Thread-44] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:03:37.045  INFO 2528 --- [Thread-44] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:03:37.047  INFO 2528 --- [Thread-44] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:03:37.162  INFO 2528 --- [restartedMain] SU                                       : Get Version in GET
+2022-07-10 18:03:37.258  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 2528 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 18:03:37.259  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 18:03:37.657  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 18:03:37.662  INFO 2528 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 18:03:37.663  INFO 2528 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 18:03:37.669  INFO 2528 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 18:03:37.669  INFO 2528 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 380 ms
+2022-07-10 18:03:37.857  INFO 2528 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 18:03:37.885  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 18:03:37.890  INFO 2528 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.100.201:5672]
+2022-07-10 18:03:37.911  INFO 2528 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#68038ea6:0/SimpleConnection@eb03b74 [delegate=amqp://guest@192.168.100.201:5672/, localPort= 52719]
+2022-07-10 18:03:37.964  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 0.795 seconds (JVM running for 2256.116)
+2022-07-10 18:03:37.969  INFO 2528 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-07-10 18:21:17.297  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:21:17.296  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:21:17.302  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:21:17.305  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:21:17.308  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:21:18.035  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:21:18.037  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:21:18.038  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:21:18.039  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:21:18.274  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:21:18.618  INFO 2528 --- [Thread-48] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:21:18.619  INFO 2528 --- [Thread-48] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:21:18.620  INFO 2528 --- [Thread-48] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:21:18.620  INFO 2528 --- [Thread-48] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:21:18.620  INFO 2528 --- [Thread-48] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:21:18.724  INFO 2528 --- [restartedMain] SU                                       : Get Version in GET
+2022-07-10 18:21:18.784  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 2528 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 18:21:18.785  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 18:21:19.073  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 18:21:19.074  INFO 2528 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 18:21:19.075  INFO 2528 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 18:21:19.087  INFO 2528 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 18:21:19.088  INFO 2528 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 299 ms
+2022-07-10 18:21:19.224  INFO 2528 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 18:21:19.237  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 18:21:19.242  INFO 2528 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.100.201:5672]
+2022-07-10 18:21:19.254  INFO 2528 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#20c6d6bb:0/SimpleConnection@32564fe9 [delegate=amqp://guest@192.168.100.201:5672/, localPort= 53715]
+2022-07-10 18:21:19.286  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 0.555 seconds (JVM running for 3317.439)
+2022-07-10 18:21:19.289  INFO 2528 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-07-10 18:33:39.521  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:33:39.523  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:33:39.525  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:33:39.526  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:33:39.529  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:33:40.459  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:33:40.467  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:33:40.466  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:33:40.466  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:33:40.459  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:33:40.895  INFO 2528 --- [Thread-52] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:33:40.895  INFO 2528 --- [Thread-52] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:33:40.895  INFO 2528 --- [Thread-52] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:33:40.906  INFO 2528 --- [Thread-52] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:33:40.906  INFO 2528 --- [Thread-52] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:33:40.998  INFO 2528 --- [restartedMain] SU                                       : Get Version in GET
+2022-07-10 18:33:41.056  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 2528 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 18:33:41.057  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 18:33:41.414  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 18:33:41.415  INFO 2528 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 18:33:41.416  INFO 2528 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 18:33:41.422  INFO 2528 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 18:33:41.422  INFO 2528 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 361 ms
+2022-07-10 18:33:41.558  INFO 2528 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 18:33:41.565  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 18:33:41.570  INFO 2528 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.100.201:5672]
+2022-07-10 18:33:41.579  INFO 2528 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#15073ed0:0/SimpleConnection@68740b11 [delegate=amqp://guest@192.168.100.201:5672/, localPort= 54435]
+2022-07-10 18:33:41.612  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 0.608 seconds (JVM running for 4059.764)
+2022-07-10 18:33:41.614  INFO 2528 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-07-10 18:37:25.597  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:37:25.599  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:37:25.601  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:37:25.602  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:37:25.603  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:37:26.356  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:37:26.389  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:37:26.389  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:37:26.389  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:37:26.390  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:37:26.866  INFO 2528 --- [Thread-56] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:37:26.866  INFO 2528 --- [Thread-56] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:37:26.867  INFO 2528 --- [Thread-56] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:37:26.867  INFO 2528 --- [Thread-56] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:37:26.868  INFO 2528 --- [Thread-56] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:37:26.975  INFO 2528 --- [restartedMain] SU                                       : Get Version in GET
+2022-07-10 18:37:27.059  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 2528 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 18:37:27.060  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 18:37:27.395  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 18:37:27.397  INFO 2528 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 18:37:27.397  INFO 2528 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 18:37:27.406  INFO 2528 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 18:37:27.407  INFO 2528 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 343 ms
+2022-07-10 18:37:27.594  INFO 2528 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 18:37:27.610  INFO 2528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 18:37:27.614  INFO 2528 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.100.201:5672]
+2022-07-10 18:37:27.628  INFO 2528 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#2a4ecd62:0/SimpleConnection@6530ae41 [delegate=amqp://guest@192.168.100.201:5672/, localPort= 54642]
+2022-07-10 18:37:27.662  INFO 2528 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 0.674 seconds (JVM running for 4285.814)
+2022-07-10 18:37:27.663  INFO 2528 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-07-10 18:37:34.052  INFO 2528 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-10 18:37:34.055  INFO 2528 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-10 18:37:34.057  INFO 2528 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-07-10 18:37:34.077  INFO 2528 --- [http-nio-8080-exec-1] c.chufan.nove.controller.UserController  : in fail----:AE07AB424820EE37F222FA8D3CF0C912
+2022-07-10 18:37:34.096  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657449454078]
+2022-07-10 18:37:52.816  INFO 2528 --- [http-nio-8080-exec-3] c.chufan.nove.controller.UserController  : in fail----:AE07AB424820EE37F222FA8D3CF0C912
+2022-07-10 18:37:52.823  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657449472820]
+2022-07-10 18:38:20.808  INFO 2528 --- [http-nio-8080-exec-4] c.chufan.nove.controller.UserController  : in fail----:AE07AB424820EE37F222FA8D3CF0C912
+2022-07-10 18:38:20.813  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657449500809]
+2022-07-10 18:39:06.130  INFO 2528 --- [http-nio-8080-exec-6] c.chufan.nove.controller.UserController  : in fail----:AE07AB424820EE37F222FA8D3CF0C912
+2022-07-10 18:39:06.137  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657449546132]
+2022-07-10 18:39:06.137  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.nove.service.QueueMessageListener    : queue q_mail received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657449546132]
+2022-07-10 18:39:19.830  INFO 2528 --- [http-nio-8080-exec-7] c.chufan.nove.controller.UserController  : in fail----:AE07AB424820EE37F222FA8D3CF0C912
+2022-07-10 18:39:19.838  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657449559835]
+2022-07-10 18:39:29.873  INFO 2528 --- [http-nio-8080-exec-5] c.chufan.nove.controller.UserController  : in fail----:AE07AB424820EE37F222FA8D3CF0C912
+2022-07-10 18:39:29.880  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] c.c.nove.service.QueueMessageListener    : queue q_sms received message: [LoginMessage: email=mm@gg.com, name=tim, success=true, timestamp=1657449569878]
+2022-07-10 18:39:29.881  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-1] c.c.nove.service.QueueMessageListener    : queue q_mail received message: [LoginMessage: email=mm@gg.com, name=tim, success=true, timestamp=1657449569878]
+2022-07-10 18:45:21.915  INFO 2528 --- [http-nio-8080-exec-10] c.chufan.nove.controller.UserController  : in fail----:AE07AB424820EE37F222FA8D3CF0C912
+2022-07-10 18:45:21.917  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.nove.service.QueueMessageListener    : queue q_mail received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657449921916]
+2022-07-10 18:45:21.917  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657449921916]
+2022-07-10 18:45:23.770  INFO 2528 --- [http-nio-8080-exec-1] c.chufan.nove.controller.UserController  : in fail----:AE07AB424820EE37F222FA8D3CF0C912
+2022-07-10 18:45:23.774  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-1] c.c.nove.service.QueueMessageListener    : queue q_mail received message: [LoginMessage: email=mm@gg.com, name=tim, success=true, timestamp=1657449923771]
+2022-07-10 18:45:23.774  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] c.c.nove.service.QueueMessageListener    : queue q_sms received message: [LoginMessage: email=mm@gg.com, name=tim, success=true, timestamp=1657449923771]
+2022-07-10 18:45:24.757  INFO 2528 --- [http-nio-8080-exec-3] c.chufan.nove.controller.UserController  : in fail----:AE07AB424820EE37F222FA8D3CF0C912
+2022-07-10 18:45:24.762  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657449924758]
+2022-07-10 18:45:24.763  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.nove.service.QueueMessageListener    : queue q_mail received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657449924758]
+2022-07-10 18:45:28.934  INFO 2528 --- [http-nio-8080-exec-4] c.chufan.nove.controller.UserController  : in fail----:AE07AB424820EE37F222FA8D3CF0C912
+2022-07-10 18:45:28.939  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657449928935]
+2022-07-10 18:50:40.142  INFO 2528 --- [http-nio-8080-exec-7] c.chufan.nove.controller.UserController  : in fail----:AE07AB424820EE37F222FA8D3CF0C912
+2022-07-10 18:50:40.145  INFO 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657450240143]
+2022-07-10 18:51:38.556  WARN 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-1] s.a.r.l.ConditionalRejectingErrorHandler : Execution of Rabbit message listener failed.
+
+org.springframework.amqp.rabbit.support.ListenerExecutionFailedException: Failed to convert message
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:156)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1670)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1589)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1577)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1568)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1512)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:993)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:940)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.access$1600(SimpleMessageListenerContainer.java:84)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1317)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.amqp.support.converter.MessageConversionException: Failed to convert Message content
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.doFromMessage(AbstractJackson2MessageConverter.java:350)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.fromMessage(AbstractJackson2MessageConverter.java:309)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.fromMessage(AbstractJackson2MessageConverter.java:292)
+	at org.springframework.amqp.rabbit.listener.adapter.AbstractAdaptableMessageListener.extractMessage(AbstractAdaptableMessageListener.java:342)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter$MessagingMessageConverterAdapter.extractPayload(MessagingMessageListenerAdapter.java:366)
+	at org.springframework.amqp.support.converter.MessagingMessageConverter.fromMessage(MessagingMessageConverter.java:132)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.toMessagingMessage(MessagingMessageListenerAdapter.java:243)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:146)
+	... 11 common frames omitted
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'LoginMessage': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=7777"; line: 1, column: 13]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:2391)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:745)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._reportInvalidToken(ReaderBasedJsonParser.java:2961)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._handleOddValue(ReaderBasedJsonParser.java:2002)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextToken(ReaderBasedJsonParser.java:802)
+	at com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:4761)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4667)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3629)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.convertBytesToObject(AbstractJackson2MessageConverter.java:411)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.convertContent(AbstractJackson2MessageConverter.java:378)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.doFromMessage(AbstractJackson2MessageConverter.java:347)
+	... 18 common frames omitted
+
+2022-07-10 18:51:38.565  WARN 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-1] ingErrorHandler$DefaultExceptionStrategy : Fatal message conversion error; message rejected; it will be dropped or routed to a dead letter exchange, if so configured: (Body:'[B@59d6dbe0(byte[70])' MessageProperties [headers={}, contentLength=0, receivedDeliveryMode=PERSISTENT, redelivered=false, receivedExchange=registration, receivedRoutingKey=, deliveryTag=3, consumerTag=amq.ctag-oZoT1FAQQIrfTiEcgr-Lzw, consumerQueue=q_mail])
+2022-07-10 18:51:38.556  WARN 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] s.a.r.l.ConditionalRejectingErrorHandler : Execution of Rabbit message listener failed.
+
+org.springframework.amqp.rabbit.support.ListenerExecutionFailedException: Failed to convert message
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:156)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1670)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1589)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1577)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1568)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1512)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:993)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:940)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.access$1600(SimpleMessageListenerContainer.java:84)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1317)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.amqp.support.converter.MessageConversionException: Failed to convert Message content
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.doFromMessage(AbstractJackson2MessageConverter.java:350)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.fromMessage(AbstractJackson2MessageConverter.java:309)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.fromMessage(AbstractJackson2MessageConverter.java:292)
+	at org.springframework.amqp.rabbit.listener.adapter.AbstractAdaptableMessageListener.extractMessage(AbstractAdaptableMessageListener.java:342)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter$MessagingMessageConverterAdapter.extractPayload(MessagingMessageListenerAdapter.java:366)
+	at org.springframework.amqp.support.converter.MessagingMessageConverter.fromMessage(MessagingMessageConverter.java:132)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.toMessagingMessage(MessagingMessageListenerAdapter.java:243)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:146)
+	... 11 common frames omitted
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'LoginMessage': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=7777"; line: 1, column: 13]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:2391)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:745)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._reportInvalidToken(ReaderBasedJsonParser.java:2961)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._handleOddValue(ReaderBasedJsonParser.java:2002)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextToken(ReaderBasedJsonParser.java:802)
+	at com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:4761)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4667)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3629)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.convertBytesToObject(AbstractJackson2MessageConverter.java:411)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.convertContent(AbstractJackson2MessageConverter.java:378)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.doFromMessage(AbstractJackson2MessageConverter.java:347)
+	... 18 common frames omitted
+
+2022-07-10 18:51:38.574  WARN 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] ingErrorHandler$DefaultExceptionStrategy : Fatal message conversion error; message rejected; it will be dropped or routed to a dead letter exchange, if so configured: (Body:'[B@4b4be8e(byte[70])' MessageProperties [headers={}, contentLength=0, receivedDeliveryMode=PERSISTENT, redelivered=false, receivedExchange=registration, receivedRoutingKey=, deliveryTag=3, consumerTag=amq.ctag-TfKAvzxevj5Etqb3Sd4M0A, consumerQueue=q_sms])
+2022-07-10 18:51:38.575 ERROR 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] o.s.a.r.l.SimpleMessageListenerContainer : Execution of Rabbit message listener failed, and the error handler threw an exception
+
+org.springframework.amqp.AmqpRejectAndDontRequeueException: Error Handler converted exception to fatal
+	at org.springframework.amqp.rabbit.listener.ConditionalRejectingErrorHandler.handleError(ConditionalRejectingErrorHandler.java:146)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeErrorHandler(AbstractMessageListenerContainer.java:1474)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.handleListenerException(AbstractMessageListenerContainer.java:1758)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1533)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:993)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:940)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.access$1600(SimpleMessageListenerContainer.java:84)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1317)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.amqp.rabbit.support.ListenerExecutionFailedException: Failed to convert message
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:156)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1670)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1589)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1577)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1568)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1512)
+	... 6 common frames omitted
+Caused by: org.springframework.amqp.support.converter.MessageConversionException: Failed to convert Message content
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.doFromMessage(AbstractJackson2MessageConverter.java:350)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.fromMessage(AbstractJackson2MessageConverter.java:309)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.fromMessage(AbstractJackson2MessageConverter.java:292)
+	at org.springframework.amqp.rabbit.listener.adapter.AbstractAdaptableMessageListener.extractMessage(AbstractAdaptableMessageListener.java:342)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter$MessagingMessageConverterAdapter.extractPayload(MessagingMessageListenerAdapter.java:366)
+	at org.springframework.amqp.support.converter.MessagingMessageConverter.fromMessage(MessagingMessageConverter.java:132)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.toMessagingMessage(MessagingMessageListenerAdapter.java:243)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:146)
+	... 11 common frames omitted
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'LoginMessage': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=7777"; line: 1, column: 13]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:2391)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:745)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._reportInvalidToken(ReaderBasedJsonParser.java:2961)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._handleOddValue(ReaderBasedJsonParser.java:2002)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextToken(ReaderBasedJsonParser.java:802)
+	at com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:4761)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4667)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3629)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.convertBytesToObject(AbstractJackson2MessageConverter.java:411)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.convertContent(AbstractJackson2MessageConverter.java:378)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.doFromMessage(AbstractJackson2MessageConverter.java:347)
+	... 18 common frames omitted
+
+2022-07-10 18:51:38.569 ERROR 2528 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-1] o.s.a.r.l.SimpleMessageListenerContainer : Execution of Rabbit message listener failed, and the error handler threw an exception
+
+org.springframework.amqp.AmqpRejectAndDontRequeueException: Error Handler converted exception to fatal
+	at org.springframework.amqp.rabbit.listener.ConditionalRejectingErrorHandler.handleError(ConditionalRejectingErrorHandler.java:146)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeErrorHandler(AbstractMessageListenerContainer.java:1474)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.handleListenerException(AbstractMessageListenerContainer.java:1758)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1533)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:993)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:940)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.access$1600(SimpleMessageListenerContainer.java:84)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1317)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.amqp.rabbit.support.ListenerExecutionFailedException: Failed to convert message
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:156)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1670)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1589)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1577)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1568)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1512)
+	... 6 common frames omitted
+Caused by: org.springframework.amqp.support.converter.MessageConversionException: Failed to convert Message content
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.doFromMessage(AbstractJackson2MessageConverter.java:350)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.fromMessage(AbstractJackson2MessageConverter.java:309)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.fromMessage(AbstractJackson2MessageConverter.java:292)
+	at org.springframework.amqp.rabbit.listener.adapter.AbstractAdaptableMessageListener.extractMessage(AbstractAdaptableMessageListener.java:342)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter$MessagingMessageConverterAdapter.extractPayload(MessagingMessageListenerAdapter.java:366)
+	at org.springframework.amqp.support.converter.MessagingMessageConverter.fromMessage(MessagingMessageConverter.java:132)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.toMessagingMessage(MessagingMessageListenerAdapter.java:243)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:146)
+	... 11 common frames omitted
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'LoginMessage': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=7777"; line: 1, column: 13]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:2391)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:745)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._reportInvalidToken(ReaderBasedJsonParser.java:2961)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._handleOddValue(ReaderBasedJsonParser.java:2002)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextToken(ReaderBasedJsonParser.java:802)
+	at com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:4761)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4667)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3629)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.convertBytesToObject(AbstractJackson2MessageConverter.java:411)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.convertContent(AbstractJackson2MessageConverter.java:378)
+	at org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.doFromMessage(AbstractJackson2MessageConverter.java:347)
+	... 18 common frames omitted
+
+2022-07-10 18:58:16.662  INFO 10608 --- [main] com.chufan.nove.NoveApplicationTests     : Starting NoveApplicationTests using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 10608 (started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 18:58:16.665  INFO 10608 --- [main] com.chufan.nove.NoveApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 18:58:22.775  INFO 10608 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.100.201:5672]
+2022-07-10 18:58:22.896  INFO 10608 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#280d9edc:0/SimpleConnection@2a8a4e0c [delegate=amqp://guest@192.168.100.201:5672/, localPort= 55959]
+2022-07-10 18:58:23.002  INFO 10608 --- [main] com.chufan.nove.NoveApplicationTests     : Started NoveApplicationTests in 7.086 seconds (JVM running for 9.086)
+2022-07-10 18:58:23.683  INFO 10608 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:58:23.686  INFO 10608 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:58:23.688  INFO 10608 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:58:23.692  INFO 10608 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:58:23.699  INFO 10608 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-07-10 18:58:23.982  INFO 10608 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:58:23.982  INFO 10608 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:58:23.995  INFO 10608 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:58:23.995  INFO 10608 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:58:23.995  INFO 10608 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-07-10 18:58:24.003  INFO 10608 --- [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:58:24.004  INFO 10608 --- [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:58:24.005  INFO 10608 --- [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:58:24.005  INFO 10608 --- [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 18:58:24.005  INFO 10608 --- [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+2022-07-10 19:00:26.619  INFO 4956 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 4956 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-10 19:00:26.622  INFO 4956 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-10 19:00:26.836  INFO 4956 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-10 19:00:26.838  INFO 4956 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-10 19:00:29.799  INFO 4956 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-10 19:00:29.817  INFO 4956 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-10 19:00:29.818  INFO 4956 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-10 19:00:29.973  INFO 4956 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-10 19:00:29.974  INFO 4956 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3133 ms
+2022-07-10 19:00:32.051  INFO 4956 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-10 19:00:32.238  INFO 4956 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-10 19:00:32.245  INFO 4956 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.100.201:5672]
+2022-07-10 19:00:32.400  INFO 4956 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#52311564:0/SimpleConnection@7b7a465e [delegate=amqp://guest@192.168.100.201:5672/, localPort= 56081]
+2022-07-10 19:00:32.624  INFO 4956 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 6.822 seconds (JVM running for 7.718)
+2022-07-10 19:00:41.167  INFO 4956 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-10 19:00:41.168  INFO 4956 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-10 19:00:41.171  INFO 4956 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-07-10 19:00:41.271  INFO 4956 --- [http-nio-8080-exec-1] c.chufan.nove.controller.UserController  : in fail----:C44C92667E3D46E002E3C91215EA98B7
+2022-07-10 19:00:41.417  INFO 4956 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657450841272]
+2022-07-10 19:00:51.147  INFO 4956 --- [http-nio-8080-exec-2] c.chufan.nove.controller.UserController  : in loging----
+2022-07-10 19:00:51.153  INFO 4956 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] c.c.nove.service.QueueMessageListener    : queue q_sms received message: [LoginMessage: email=m@find73.com, name=Tony, success=false, timestamp=1657450851148]
+2022-07-10 19:00:51.155  INFO 4956 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.nove.service.QueueMessageListener    : queue q_mail received message: [LoginMessage: email=m@find73.com, name=Tony, success=false, timestamp=1657450851148]
+2022-07-11 22:19:34.691  INFO 676 --- [restartedMain] com.chufan.nove.NoveApplication          : Starting NoveApplication using Java 1.8.0_211 on DESKTOP-ODKDM2D with PID 676 (D:\dev\spbootProj\nove\target\classes started by Tony in D:\dev\spbootProj\nove)
+2022-07-11 22:19:34.702  INFO 676 --- [restartedMain] com.chufan.nove.NoveApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-07-11 22:19:34.854  INFO 676 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-11 22:19:34.868  INFO 676 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-11 22:19:38.631  INFO 676 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-11 22:19:38.668  INFO 676 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-11 22:19:38.669  INFO 676 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-11 22:19:38.847  INFO 676 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-11 22:19:38.849  INFO 676 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3969 ms
+2022-07-11 22:19:41.204  INFO 676 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-11 22:19:41.483  INFO 676 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-11 22:19:41.492  INFO 676 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [192.168.100.201:5672]
+2022-07-11 22:19:41.737  INFO 676 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#45d40a90:0/SimpleConnection@2f91f86b [delegate=amqp://guest@192.168.100.201:5672/, localPort= 52929]
+2022-07-11 22:19:41.976  INFO 676 --- [restartedMain] com.chufan.nove.NoveApplication          : Started NoveApplication in 8.632 seconds (JVM running for 10.175)
+2022-07-11 22:21:43.137  INFO 676 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-11 22:21:43.139  INFO 676 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-11 22:21:43.143  INFO 676 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2022-07-11 22:21:43.229  INFO 676 --- [http-nio-8080-exec-2] c.chufan.nove.controller.UserController  : in loging----
+2022-07-11 22:21:43.438  INFO 676 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_mail received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657549303229]
+2022-07-11 22:21:43.437  INFO 676 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=m@find73.com, name=Tony, timestamp=1657549303229]
+2022-07-11 22:22:04.151  INFO 676 --- [http-nio-8080-exec-3] c.chufan.nove.controller.UserController  : in fail----:7DA3054F8CE020BF18113E61F19CDD1F
+2022-07-11 22:22:04.169  INFO 676 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657549324151]
+2022-07-11 22:22:06.427  INFO 676 --- [http-nio-8080-exec-4] c.chufan.nove.controller.UserController  : in fail----:7DA3054F8CE020BF18113E61F19CDD1F
+2022-07-11 22:22:06.435  INFO 676 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] c.c.nove.service.QueueMessageListener    : queue q_app received message: [LoginMessage: email=mm@gg.com, name=tim, success=false, timestamp=1657549326429]
+2022-07-11 22:22:12.973  INFO 676 --- [http-nio-8080-exec-5] c.chufan.nove.controller.UserController  : in fail----:7DA3054F8CE020BF18113E61F19CDD1F
+2022-07-11 22:22:12.977  INFO 676 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#4-1] c.c.nove.service.QueueMessageListener    : queue q_mail received message: [LoginMessage: email=mm@gg.com, name=tim, success=true, timestamp=1657549332974]
+2022-07-11 22:22:12.982  INFO 676 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-1] c.c.nove.service.QueueMessageListener    : queue q_sms received message: [LoginMessage: email=mm@gg.com, name=tim, success=true, timestamp=1657549332974]
+2022-07-11 22:22:47.012  INFO 676 --- [http-nio-8080-exec-7] c.chufan.nove.controller.UserController  : in fail----:7DA3054F8CE020BF18113E61F19CDD1F
+2022-07-11 22:22:47.015  INFO 676 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] c.c.nove.service.QueueMessageListener    : queue q_sms received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657549367013]
+2022-07-11 22:22:47.015  INFO 676 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] c.c.nove.service.QueueMessageListener    : queue q_mail received registration message: [RegistrationMessage: email=mm@gg.com, name=tim, timestamp=1657549367013]
+2022-07-11 22:23:34.582  INFO 676 --- [http-nio-8080-exec-8] c.chufan.nove.controller.UserController  : in fail----:7DA3054F8CE020BF18113E61F19CDD1F
